@@ -15,7 +15,7 @@ export function Header() {
             ULTRA<span className="text-red-600">.</span>
           </Link>
           <form
-            action="/shop"
+            action="/ultra-fashion/shop"
             method="get"
             className="flex min-w-0 flex-1 items-center overflow-hidden rounded-full border border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-ultra-800"
           >
