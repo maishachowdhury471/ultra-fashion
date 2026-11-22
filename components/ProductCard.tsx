@@ -1,5 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
+import Link from 'next/link';
 import { FALLBACK_IMG, formatPrice, type Product } from '../lib/products';
 
 export function ProductImage({ product, className }: { product: Product; className?: string }) {
@@ -46,7 +47,7 @@ export function TiltCard({ product, onQuickView }: { product: Product; onQuickVi
       className="tilt-card relative overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-gray-700 dark:bg-ultra-800"
     >
       <div className="tilt-glare" />
-      <a href={`/product/${product.id}`} className="block">
+      <Link href={`/product/${product.id}`} className="block">
         <div className="relative aspect-[4/5] w-full overflow-hidden bg-gray-100 dark:bg-ultra-700">
           <ProductImage product={product} className="h-full w-full object-cover" />
           {product.badge && (
@@ -54,12 +55,12 @@ export function TiltCard({ product, onQuickView }: { product: Product; onQuickVi
           )}
           <span className="absolute right-2 top-2 rounded-full bg-black/70 px-2 py-1 text-[11px] font-bold text-white">-{discount}%</span>
         </div>
-      </a>
+      </Link>
       <div className="tilt-inner p-3">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{product.category} · {product.ageLabel}</p>
-        <a href={`/product/${product.id}`} className="mt-1 line-clamp-2 block min-h-[2.5rem] text-sm font-semibold leading-snug text-gray-900 hover:text-red-600 dark:text-white">
+        <Link href={`/product/${product.id}`} className="mt-1 line-clamp-2 block min-h-[2.5rem] text-sm font-semibold leading-snug text-gray-900 hover:text-red-600 dark:text-white">
           {product.name}
-        </a>
+        </Link>
         <p className="mt-1 text-xs text-amber-500">{'★'.repeat(Math.round(product.rating))} <span className="text-gray-500 dark:text-gray-400">{product.rating} ({product.reviews})</span></p>
         <div className="mt-2 flex items-baseline gap-2">
           <span className="text-lg font-extrabold text-gray-900 dark:text-white">{formatPrice(product.price)}</span>
