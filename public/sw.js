@@ -1,5 +1,5 @@
 // Simple cache-first service worker for the ULTRA app shell (frontend-only test store).
-const CACHE = 'ultra-v1';
+const CACHE = 'ultra-v2';
 const SHELL = ['/ultra-fashion/', '/ultra-fashion/shop', '/ultra-fashion/orders', '/ultra-fashion/manifest.webmanifest', '/ultra-fashion/icon-192.png', '/ultra-fashion/icon-512.png'];
 
 self.addEventListener('install', (event) => {
