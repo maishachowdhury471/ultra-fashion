@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { overflow-x: hidden; }
+body { -webkit-tap-highlight-color: transparent; }
+
+/* 3D tilt product cards */
+.tilt-card { transform-style: preserve-3d; will-change: transform; transition: transform 0.15s ease-out, box-shadow 0.2s ease; }
+.tilt-card:hover { box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25); }
+.tilt-glare { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.35), transparent 60%); opacity: 0; transition: opacity 0.2s ease; }
+.tilt-card:hover .tilt-glare { opacity: 1; }
+.tilt-inner { transform: translateZ(24px); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
